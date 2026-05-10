@@ -1,0 +1,122 @@
+
+kernel8.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+0000000000080000 <_start>:
+.section ".init"
+
+_start:
+    mrs  x1, mpidr_el1
+   80000:	d53800a1 	mrs	x1, mpidr_el1
+    and  x1, x1, #3
+   80004:	92400421 	and	x1, x1, #0x3
+    cbnz x1, cpu_x
+   80008:	b5000041 	cbnz	x1, 80010 <cpu_x>
+
+000000000008000c <cpu_0>:
+
+cpu_0:    
+    b  .
+   8000c:	14000000 	b	8000c <cpu_0>
+
+0000000000080010 <cpu_x>:
+
+cpu_x:
+    wfe
+   80010:	d503205f 	wfe
+   80014:	17ffffff 	b	80010 <cpu_x>
+
+Disassembly of section .debug_line:
+
+0000000000000000 <.debug_line>:
+   0:	00000048 	udf	#72
+   4:	00080005 	.inst	0x00080005 ; undefined
+   8:	0000002a 	udf	#42
+   c:	fb010104 	.inst	0xfb010104 ; undefined
+  10:	01000d0e 	.inst	0x01000d0e ; undefined
+  14:	00010101 	.inst	0x00010101 ; undefined
+  18:	00010000 	.inst	0x00010000 ; undefined
+  1c:	01010100 	.inst	0x01010100 ; undefined
+  20:	0000011f 	udf	#287
+  24:	01020000 	.inst	0x01020000 ; undefined
+  28:	020f021f 	.inst	0x020f021f ; undefined
+  2c:	00000025 	udf	#37
+  30:	00002500 	udf	#9472
+  34:	09000000 	.inst	0x09000000 ; undefined
+  38:	08000002 	stxrb	w0, w2, [x0]
+  3c:	00000000 	udf	#0
+  40:	21211500 	.inst	0x21211500 ; undefined
+  44:	02212323 	.inst	0x02212323 ; undefined
+  48:	01010001 	.inst	0x01010001 ; undefined
+
+Disassembly of section .debug_line_str:
+
+0000000000000000 <.debug_line_str>:
+   0:	6d6f682f 	ldp	d15, d26, [x1, #-272]
+   4:	62762f65 	.inst	0x62762f65 ; undefined
+   8:	7375786f 	.inst	0x7375786f ; undefined
+   c:	442f7265 	.inst	0x442f7265 ; undefined
+  10:	6d75636f 	ldp	d15, d24, [x27, #-176]
+  14:	73746e65 	.inst	0x73746e65 ; undefined
+  18:	7078652f 	adr	x15, f0cbf <cpu_x+0x70caf>
+  1c:	6d697265 	ldp	d5, d28, [x19, #-368]
+  20:	73746e65 	.inst	0x73746e65 ; undefined
+  24:	61747300 	.inst	0x61747300 ; undefined
+  28:	532e7472 	.inst	0x532e7472 ; undefined
+	...
+
+Disassembly of section .debug_info:
+
+0000000000000000 <.debug_info>:
+   0:	00000024 	udf	#36
+   4:	08010005 	stxrb	w1, w5, [x0]
+   8:	00000000 	udf	#0
+   c:	00000001 	udf	#1
+  10:	08000000 	stxrb	w0, w0, [x0]
+  14:	00000000 	udf	#0
+  18:	00001800 	udf	#6144
+  1c:	00080000 	.inst	0x00080000 ; undefined
+  20:	002d0000 	.inst	0x002d0000 ; undefined
+  24:	80010000 	.inst	0x80010000 ; undefined
+
+Disassembly of section .debug_abbrev:
+
+0000000000000000 <.debug_abbrev>:
+   0:	10001101 	adr	x1, 220 <_start-0x7fde0>
+   4:	12011117 	and	w23, w8, #0x8000000f
+   8:	1b0e030f 	madd	w15, w24, w14, w0
+   c:	130e250e 	sbfiz	w14, w8, #18, #10
+  10:	00000005 	udf	#5
+
+Disassembly of section .debug_aranges:
+
+0000000000000000 <.debug_aranges>:
+   0:	0000002c 	udf	#44
+   4:	00000002 	udf	#2
+   8:	00080000 	.inst	0x00080000 ; undefined
+   c:	00000000 	udf	#0
+  10:	00080000 	.inst	0x00080000 ; undefined
+  14:	00000000 	udf	#0
+  18:	00000018 	udf	#24
+	...
+
+Disassembly of section .debug_str:
+
+0000000000000000 <.debug_str>:
+   0:	72617473 	.inst	0x72617473 ; undefined
+   4:	00532e74 	.inst	0x00532e74 ; undefined
+   8:	6d6f682f 	ldp	d15, d26, [x1, #-272]
+   c:	62762f65 	.inst	0x62762f65 ; undefined
+  10:	7375786f 	.inst	0x7375786f ; undefined
+  14:	442f7265 	.inst	0x442f7265 ; undefined
+  18:	6d75636f 	ldp	d15, d24, [x27, #-176]
+  1c:	73746e65 	.inst	0x73746e65 ; undefined
+  20:	7078652f 	adr	x15, f0cc7 <cpu_x+0x70cb7>
+  24:	6d697265 	ldp	d5, d28, [x19, #-368]
+  28:	73746e65 	.inst	0x73746e65 ; undefined
+  2c:	554e4700 	.inst	0x554e4700 ; undefined
+  30:	20534120 	.inst	0x20534120 ; undefined
+  34:	36342e32 	tbz	w18, #6, ffffffffffff85f8 <cpu_x+0xfffffffffff785e8>
+	...
