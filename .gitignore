@@ -1,0 +1,34 @@
+# Ignore build artifacts
+build/
+out/
+bin/
+obj/
+*.o
+*.obj
+*.elf
+*.map
+*.bin
+*.hex
+*.axf
+*.lst
+*.d
+*.a
+*.lib
+*.so
+*.sys
+*.out
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.swp
+*~
+*.swo
+*.swn
+*.tmp
+*.bak
+.DS_Store
+
+# Ignore generated files
+tags
+TAGS
