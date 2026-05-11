@@ -32,3 +32,4 @@ obj/
 # Ignore generated files
 tags
 TAGS
+.gdb_history
